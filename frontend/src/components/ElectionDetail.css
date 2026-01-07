@@ -1,0 +1,215 @@
+.election-detail-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f8fafc, #ffffff);
+  padding: 40px 0;
+}
+
+/* Election Header */
+.election-header {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  padding: 48px;
+  border-radius: 24px;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+  border: none;
+}
+
+.election-header h1 {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.election-header .election-description {
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* Notice Cards (Admin/Already Voted) */
+.admin-notice,
+.already-voted {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.notice-icon {
+  font-size: 80px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.admin-notice h2,
+.already-voted h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 16px 0;
+}
+
+.admin-notice p,
+.already-voted p {
+  color: #64748b;
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0 0 32px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-notice {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #fbbf24;
+}
+
+.already-voted {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  border: 2px solid #10b981;
+}
+
+/* Candidates Section */
+.candidates-section {
+  margin-top: 32px;
+}
+
+.candidates-section h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+.candidates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.candidate-card {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.candidate-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.candidate-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  border-color: #d1fae5;
+}
+
+.candidate-card:hover::before {
+  opacity: 1;
+}
+
+.candidate-image,
+.candidate-image-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  border: 4px solid #e2e8f0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.candidate-card:hover .candidate-image,
+.candidate-card:hover .candidate-image-placeholder {
+  border-color: #10b981;
+  box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3);
+  transform: scale(1.05);
+}
+
+.candidate-image-placeholder {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.candidate-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+}
+
+.candidate-description {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+.candidate-card .btn {
+  width: 100%;
+  padding: 14px 24px;
+  font-size: 16px;
+}
+
+/* Empty Candidates */
+.empty-candidates {
+  text-align: center;
+  padding: 60px 40px;
+  border: 2px dashed #cbd5e1;
+}
+
+.empty-candidates p {
+  color: #64748b;
+  font-size: 17px;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .election-header {
+    padding: 32px 24px;
+  }
+
+  .election-header h1 {
+    font-size: 28px;
+  }
+
+  .election-header .election-description {
+    font-size: 16px;
+  }
+
+  .candidates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-notice,
+  .already-voted {
+    padding: 40px 24px;
+  }
+}
