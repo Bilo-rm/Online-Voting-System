@@ -26,12 +26,12 @@ Follow these steps in order to deploy your voting system to Render.
   - [ ] JWT_SECRET (generate using: `python -c "import secrets; print(secrets.token_urlsafe(32))"`)
   - [ ] FRONTEND_URL (leave blank for now)
 - [ ] Click "Create Web Service"
-- [ ] **Copy Backend URL**: _______________________________
+- [x] **Copy Backend URL**: https://online-voting-system-o9eo.onrender.com ✅
 
 ### 2️⃣ Deploy Frontend (10 minutes)
 
 - [ ] Create `.env.production` in frontend folder
-- [ ] Add: `REACT_APP_API_URL=https://YOUR-BACKEND-URL.onrender.com/api`
+- [ ] Add: `REACT_APP_API_URL=https://online-voting-system-o9eo.onrender.com/api`
 - [ ] Push changes to GitHub (if needed)
 - [ ] In Render, click "New +" → "Static Site"
 - [ ] Connect your GitHub repo
